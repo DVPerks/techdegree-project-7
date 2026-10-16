@@ -1,0 +1,48 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+@use '../utilities/variables' as variables;
+@use "sass:color";
+
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+}
+  .default {
+    background-color: variables.$sky-blue;
+    &:hover {
+      background-color: color.scale(variables.$sky-blue, $lightness: 15%);
+    }
+  }
+  .error {
+    background-color: variables.$red;
+    &:hover {
+      background-color: color.scale(variables.$red, $lightness: 15%);
+    }
+  }
+  .info {
+    background-color: variables.$lavendar;
+    &:hover {
+      background-color: color.scale(variables.$lavendar, $lightness: 15%);
+    }
+  }
+  .success {
+    background-color: variables.$green;
+    &:hover {
+      background-color: color.scale(variables.$green, $lightness: 15%);
+    }
+  }  
+  .warning {
+    background-color: variables.$orange;
+    &:hover {
+      background-color: color.scale(variables.$orange, $lightness: 15%);
+    }
+  }
