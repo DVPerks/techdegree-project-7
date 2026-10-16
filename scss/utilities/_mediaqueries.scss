@@ -3,8 +3,7 @@
 /* ============================================= */
 @use 'variables' as variables;
 
-@media (min-width: variables.$mobile) {
-
+@media (min-width: variables.$tablet) {
   /* Grid */
   .grid {
     &-container {

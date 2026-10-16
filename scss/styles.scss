@@ -1,6 +1,5 @@
 @use 'base/normalize';
 @use 'base/typography';
-@use 'utilities/mediaqueries';
 @use 'utilities/variables';
 @use 'component/button';
 @use 'component/form';
@@ -9,3 +8,4 @@
 @use 'component/navigation';
 @use 'component/graph';
 @use 'component/toggle-switch';
+@use 'utilities/mediaqueries';

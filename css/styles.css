@@ -350,35 +350,6 @@ main h3 {
 }
 
 /* ============================================= */
-/*              Media Queries                    */
-/* ============================================= */
-@media (min-width: 768px) {
-  /* Grid */
-  .grid-container {
-    grid-template-columns: 55px 1fr;
-    grid-template-areas: "header header" "nav main";
-  }
-  .grid-main {
-    grid-template-columns: 50%;
-  }
-  .traffic, .social {
-    grid-column: 1/span 2;
-  }
-  .daily, .members, .message {
-    grid-column: 1/span 1;
-  }
-  .mobile, .activity, .settings {
-    grid-column: 2/span 1;
-  }
-  /* Graph */
-  .graph-container-full {
-    width: 90vw;
-  }
-  .graph-container-half {
-    width: 45vw;
-  }
-}
-/* ============================================= */
 /*              Buttons                          */
 /* ============================================= */
 .btn {
@@ -395,38 +366,10 @@ main h3 {
 }
 
 .default {
-  background-color: #51ddfc;
+  background-color: #4d4c72;
 }
 .default:hover {
-  background-color: rgb(42%, 88.6666666667%, 99%);
-}
-
-.error {
-  background-color: #e4757a;
-}
-.error:hover {
-  background-color: rgb(91%, 54%, 55.6666666667%);
-}
-
-.info {
-  background-color: #927bc1;
-}
-.info:hover {
-  background-color: rgb(63.6666666667%, 56%, 79.3333333333%);
-}
-
-.success {
-  background-color: #63cc82;
-}
-.success:hover {
-  background-color: rgb(48%, 83%, 58.3333333333%);
-}
-
-.warning {
-  background-color: #fd7856;
-}
-.warning:hover {
-  background-color: rgb(99.3333333333%, 55%, 43.6666666667%);
+  background-color: rgb(37.8245614035%, 37.3333333333%, 56%);
 }
 
 /* ============================================= */
@@ -442,7 +385,7 @@ main h3 {
   margin: 10px auto 0;
   border: none;
   padding: 10px;
-  border-bottom: 5px solid #58e1c1;
+  border-bottom: 5px solid teal;
 }
 
 .hidden {
@@ -505,7 +448,7 @@ header {
 }
 .nav-link:hover {
   color: #fff;
-  background-color: #58e1c1;
+  background-color: teal;
 }
 
 .nav-link svg {
@@ -556,6 +499,36 @@ input.toggle:checked {
 }
 input.toggle:checked::after {
   left: 70%;
+}
+
+/* ============================================= */
+/*              Media Queries                    */
+/* ============================================= */
+@media (min-width: 768px) {
+  /* Grid */
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: "header header" "nav main";
+  }
+  .grid-main {
+    grid-template-columns: 50%;
+  }
+  .traffic, .social {
+    grid-column: 1/span 2;
+  }
+  .daily, .members, .message {
+    grid-column: 1/span 1;
+  }
+  .mobile, .activity, .settings {
+    grid-column: 2/span 1;
+  }
+  /* Graph */
+  .graph-container-full {
+    width: 90vw;
+  }
+  .graph-container-half {
+    width: 45vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
