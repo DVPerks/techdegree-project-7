@@ -441,6 +441,9 @@ header .user-profile {
   align-items: center;
   justify-content: space-between;
 }
+header .user-profile > a, header .user-profile > img, header .user-profile > h3 {
+  padding: 0 1rem;
+}
 header .user-profile .user-icon {
   width: 60px;
   height: auto;

@@ -15,6 +15,9 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    & > a, > img, > h3 {
+      padding: 0 1rem;
+    }
     & .user-icon {
       width: 60px;
       height: auto;
