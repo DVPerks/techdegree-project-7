@@ -10,9 +10,11 @@ let trafficData = {
 };
 
 let trafficOptions = {
+    responsive: true,          // Ensures it listens to window/container resizes
+    maintainAspectRatio: true, // Forces it to respect the aspect ratio
+    aspectRatio: 2.5,          // Width-to-height ratio (width / height)
     backgroundColor: 'rgba(112, 104, 201, .5)',
     fill: true,
-    aspectRatio: 2.5,
     animation: {
         duration: 0
     },
@@ -48,11 +50,13 @@ const dailyData = {
 };
 
 const dailyOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
     scales: {
         y: {
             beginAtZero: true
         }
-        },
+    },
     plugins: {
         legend: {
             display: false
@@ -83,6 +87,8 @@ const mobileData = {
 };
 
 const mobileOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
     aspectRatio: 1.9,
     plugins: {
         legend: {
@@ -100,3 +106,9 @@ let mobileChart = new Chart(mobileCanvas, {
     data: mobileData,
     options: mobileOptions
 });
+
+function beforePrintHandler () {
+    for (let id in Chart.instances) {
+        Chart.instances[id].resize();
+    }
+}

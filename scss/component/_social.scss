@@ -1,0 +1,15 @@
+@use '../utilities/variables' as variables;
+
+.social {
+    display: flex;
+    flex-direction: column;
+    &-container {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        background-color: variables.$light-gray;
+        border: 1px solid variables.$gray;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+}

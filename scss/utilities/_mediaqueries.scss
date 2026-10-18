@@ -7,13 +7,14 @@
   /* Grid */
   .grid {
     &-container {
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: 80px minmax(0, 1fr);
       grid-template-areas:
-      "header header"
-      "nav main";
+        "header header"
+        "nav main";
     }
+
     &-main {
-      grid-template-columns: 50% ;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
@@ -21,10 +22,10 @@
     grid-column: 1 / span 2;
   }
   .daily, .members, .message {
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
   } 
   .mobile, .activity, .settings {
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 2;
   }
 
   /* Navigation */
@@ -34,14 +35,14 @@
     height: 100%;
     padding: 1rem;
   }
-    
-  /* Graph */
 
-  .graph-container-full {
-    width: 90vw;
-  }
-  .graph-container-half {
-    width: 45vw;
-  }
+}
 
+@media (min-width: variables.$desktop) {
+  .daily, .members, .message {
+    grid-column: 1 / span 1;
+  } 
+  .mobile, .activity, .settings {
+    grid-column: 2 / span 1;
+  }
 }

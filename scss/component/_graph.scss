@@ -5,5 +5,14 @@
 @use '../utilities/variables' as variables;
 
 .graph-container-full, .graph-container-half {
-    width: 95vw;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    margin: auto;
+  canvas {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+  }
 }

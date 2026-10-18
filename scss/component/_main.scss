@@ -1,0 +1,23 @@
+@use '../utilities/variables' as variables;
+
+.main-header {
+    display: flex;
+}
+
+.headline {
+    padding: 0 1rem;
+}
+
+.tab {
+    flex: 1;
+    background-color: variables.$light-gray;
+    border-left: 1px solid variables.$gray;
+    border-bottom: 1px solid variables.$gray;
+}
+
+section {
+    padding: 2rem;
+    min-width: 0;
+    width: 100%;
+    border-bottom: 1px solid variables.$gray;
+}

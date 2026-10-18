@@ -402,12 +402,13 @@ main h3 {
 /* ============================================= */
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto;
   grid-template-areas: "header" "nav" "main";
 }
 .grid-header {
   grid-area: header;
+  width: 100%;
 }
 .grid-nav {
   grid-area: nav;
@@ -415,13 +416,31 @@ main h3 {
 .grid-main {
   grid-area: main;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
 }
 
 /* ============================================= */
 /*              Images                           */
 /* ============================================= */
 .profile-image {
+  width: 60px;
+  height: auto;
   border-radius: 50%;
+  box-sizing: initial;
+}
+
+div.social-image {
+  width: 80px;
+  height: 80px;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #7477bf;
+}
+div.social-image svg {
+  width: 100%;
+  height: auto;
+  fill: white;
 }
 
 /* ============================================= */
@@ -440,8 +459,14 @@ header .user-profile {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
 }
-header .user-profile > a, header .user-profile > img, header .user-profile > h3 {
+header .user-profile div {
+  height: 100%;
+  border-right: 1px solid white;
+  display: block;
+}
+header .user-profile a, header .user-profile img, header .user-profile h3 {
   padding: 0 1rem;
 }
 header .user-profile .user-icon {
@@ -450,7 +475,7 @@ header .user-profile .user-icon {
 }
 
 .nav {
-  padding-left: 0;
+  padding: 0 5rem;
   flex-basis: 100%;
   display: flex;
   flex-direction: row;
@@ -481,11 +506,34 @@ header .user-profile .user-icon {
   fill: white;
 }
 
+.social {
+  display: flex;
+  flex-direction: column;
+}
+.social-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border: 1px solid #d2d2d2;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
 /* ============================================= */
 /*              Graph System                      */
 /* ============================================= */
 .graph-container-full, .graph-container-half {
-  width: 95vw;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: auto;
+}
+.graph-container-full canvas, .graph-container-half canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
 }
 
 input.toggle {
@@ -495,7 +543,8 @@ input.toggle {
   width: 50px;
   height: 30px;
   border-radius: 25px;
-  background-color: #ccc;
+  background-color: #f7f7f7;
+  border: 1px solid #d2d2d2;
   transition: background 0.3s;
   outline: none;
   cursor: pointer;
@@ -510,13 +559,36 @@ input.toggle::after {
   height: 1.25rem;
   width: 1.25rem;
   background-color: rgb(255, 255, 255);
+  border: 1px solid #d2d2d2;
   transition: left 0.3s;
 }
 input.toggle:checked {
-  background-color: green;
+  background-color: #7477bf;
 }
 input.toggle:checked::after {
   left: 70%;
+}
+
+.main-header {
+  display: flex;
+}
+
+.headline {
+  padding: 0 1rem;
+}
+
+.tab {
+  flex: 1;
+  background-color: #f7f7f7;
+  border-left: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+section {
+  padding: 2rem;
+  min-width: 0;
+  width: 100%;
+  border-bottom: 1px solid #d2d2d2;
 }
 
 /* ============================================= */
@@ -525,20 +597,20 @@ input.toggle:checked::after {
 @media (min-width: 768px) {
   /* Grid */
   .grid-container {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 80px minmax(0, 1fr);
     grid-template-areas: "header header" "nav main";
   }
   .grid-main {
-    grid-template-columns: 50%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .traffic, .social {
     grid-column: 1/span 2;
   }
   .daily, .members, .message {
-    grid-column: 1/span 1;
+    grid-column: 1/span 2;
   }
   .mobile, .activity, .settings {
-    grid-column: 2/span 1;
+    grid-column: 1/span 2;
   }
   /* Navigation */
   .nav {
@@ -547,12 +619,13 @@ input.toggle:checked::after {
     height: 100%;
     padding: 1rem;
   }
-  /* Graph */
-  .graph-container-full {
-    width: 90vw;
+}
+@media (min-width: 1024px) {
+  .daily, .members, .message {
+    grid-column: 1/span 1;
   }
-  .graph-container-half {
-    width: 45vw;
+  .mobile, .activity, .settings {
+    grid-column: 2/span 1;
   }
 }
 

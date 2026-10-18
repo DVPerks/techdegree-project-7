@@ -1,7 +1,24 @@
 /* ============================================= */
 /*              Images                           */
 /* ============================================= */
+@use '../utilities/variables' as variables;
 
 .profile-image {
+  width: 60px;
+  height: auto;
   border-radius: 50%;
+  box-sizing: initial;
+}
+
+div.social-image {
+  width: 80px;
+  height: 80px;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: variables.$lavendar;
+  & svg {
+    width: 100%;
+    height: auto;
+    fill: white;
+  }
 }
