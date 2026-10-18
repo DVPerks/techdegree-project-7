@@ -5,6 +5,21 @@
 
 header {
   background-color: variables.$lavendar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem;
+  & .user-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    & .user-icon {
+      width: 60px;
+      height: auto;
+    }
+  }
 }
 
 .nav {

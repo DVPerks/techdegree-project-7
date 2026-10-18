@@ -429,6 +429,21 @@ main h3 {
 /* ============================================= */
 header {
   background-color: #7477bf;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem;
+}
+header .user-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .user-profile .user-icon {
+  width: 60px;
+  height: auto;
 }
 
 .nav {
@@ -507,7 +522,7 @@ input.toggle:checked::after {
 @media (min-width: 768px) {
   /* Grid */
   .grid-container {
-    grid-template-columns: 55px 1fr;
+    grid-template-columns: 80px 1fr;
     grid-template-areas: "header header" "nav main";
   }
   .grid-main {
@@ -521,6 +536,13 @@ input.toggle:checked::after {
   }
   .mobile, .activity, .settings {
     grid-column: 2/span 1;
+  }
+  /* Navigation */
+  .nav {
+    flex-direction: column;
+    width: 80px;
+    height: 100%;
+    padding: 1rem;
   }
   /* Graph */
   .graph-container-full {
