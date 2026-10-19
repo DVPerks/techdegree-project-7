@@ -18,7 +18,7 @@
     }
   }
 
-  .traffic, .social {
+  .main-header, .alert, .traffic, .social {
     grid-column: 1 / span 2;
   }
   .daily, .members, .message {
@@ -36,6 +36,37 @@
     padding: 1rem;
   }
 
+  .mobile {
+    border-left: 1px solid variables.$gray;
+  }
+
+  .social-flexbox {
+    flex-direction: row;
+    & .social-container {
+      flex: 3;
+    }
+  }
+
+  .members {
+    &-container, &-flexbox {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &-container {
+      gap: 1rem;
+    }
+    &-flexbox {
+      justify-content: space-between;
+      text-align: left;
+      flex: 1;
+    }
+  }
+
+  .mobile-hidden {
+    display: initial;
+  }
+
 }
 
 @media (min-width: variables.$desktop) {
@@ -44,5 +75,9 @@
   } 
   .mobile, .activity, .settings {
     grid-column: 2 / span 1;
+  }
+
+  .activity {
+    border-left: 1px solid variables.$gray;
   }
 }

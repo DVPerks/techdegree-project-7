@@ -6,11 +6,12 @@ let trafficData = {
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderWidth: 1,
+        lineTension: 0.3,
     }]
 };
 
 let trafficOptions = {
-    responsive: true,          // Ensures it listens to window/container resizes
+    responsive: false,          // Ensures it listens to window/container resizes
     maintainAspectRatio: true, // Forces it to respect the aspect ratio
     aspectRatio: 2.5,          // Width-to-height ratio (width / height)
     backgroundColor: 'rgba(112, 104, 201, .5)',
@@ -50,7 +51,7 @@ const dailyData = {
 };
 
 const dailyOptions = {
-    responsive: true,
+    responsive: false,
     maintainAspectRatio: true,
     scales: {
         y: {
@@ -87,7 +88,7 @@ const mobileData = {
 };
 
 const mobileOptions = {
-    responsive: true,
+    responsive: false,
     maintainAspectRatio: true,
     aspectRatio: 1.9,
     plugins: {
@@ -108,7 +109,15 @@ let mobileChart = new Chart(mobileCanvas, {
 });
 
 function beforePrintHandler () {
-    for (let id in Chart.instances) {
-        Chart.instances[id].resize();
+    for (let id in trafficCanvas.instances) {
+        trafficCanvas.instances[id].resize();
     }
 }
+
+window.addEventListener('afterprint', () => {
+  trafficCanvas.resize();
+});
+
+window.addEventListener('afterprint', () => {
+  trafficCanvas.resize();
+});

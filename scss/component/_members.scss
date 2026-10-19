@@ -1,0 +1,18 @@
+@use '../utilities/variables' as variables;
+
+.members {
+    &-container {
+        text-align: center;
+        border-bottom: 1px solid variables.$gray;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        & p {
+            margin: 0;
+        }
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+    
+}
