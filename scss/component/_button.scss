@@ -3,22 +3,34 @@
 /* ============================================= */
 @use '../utilities/variables' as variables;
 @use "sass:color";
-
-.btn {
-    margin-top: 15px;
-    width: 100%;
-    color: #fff;
-    border: none;
-    padding: 10px 0;
-    text-transform: uppercase;
-    border-radius: 5px;
-    &:hover {
-      cursor: pointer;
-    }
+.message button {
+  width: 100%;
 }
-  .default {
-    background-color: variables.$violet;
-    &:hover {
-      background-color: color.scale(variables.$violet, $lightness: 15%);
+
+.settings-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  & button {
+    flex: 2;
+  }
+}
+
+button{
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  height: 3rem;
+  &.button {
+    &-primary {
+      background-color: variables.$lavendar;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &-disabled {
+      background-color: variables.$gray;
     }
   }
+}

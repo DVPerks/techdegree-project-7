@@ -353,24 +353,34 @@ main h3 {
 /* ============================================= */
 /*              Buttons                          */
 /* ============================================= */
-.btn {
-  margin-top: 15px;
+.message button {
   width: 100%;
-  color: #fff;
-  border: none;
-  padding: 10px 0;
-  text-transform: uppercase;
-  border-radius: 5px;
-}
-.btn:hover {
-  cursor: pointer;
 }
 
-.default {
-  background-color: #4d4c72;
+.settings-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
-.default:hover {
-  background-color: rgb(37.8245614035%, 37.3333333333%, 56%);
+.settings-button button {
+  flex: 2;
+}
+
+button {
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  height: 3rem;
+}
+button.button-primary {
+  background-color: #7477bf;
+}
+button.button-primary:hover {
+  cursor: pointer;
+}
+button.button-disabled {
+  background-color: #d2d2d2;
 }
 
 /* ============================================= */
@@ -536,6 +546,27 @@ header .user-profile .user-icon {
   font-size: 3rem;
 }
 
+.form-field, .form-area, .form-send {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #d2d2d2;
+}
+.form-field, .form-area {
+  background-color: #f7f7f7;
+  padding: 0.5rem;
+}
+.form-field, .form-send {
+  height: 3rem;
+}
+.form-area {
+  height: 10rem;
+}
+.form-send {
+  color: white;
+  background-color: #7477bf;
+}
+
 /* ============================================= */
 /*              Graph System                      */
 /* ============================================= */
@@ -571,6 +602,12 @@ header .user-profile .user-icon {
   color: white;
 }
 
+.members {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 .members-container {
   text-align: center;
   border-bottom: 1px solid #d2d2d2;
@@ -583,6 +620,18 @@ header .user-profile .user-icon {
 .members-container:last-child {
   border-bottom: none;
   margin-bottom: 0;
+}
+
+.settings, .settings-container, .settings-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.settings-container, .settings-container-container, .settings-toggle-container {
+  height: 100%;
+}
+.settings-toggle, .settings-container-toggle, .settings-toggle-toggle {
+  gap: 2rem;
 }
 
 input.toggle {
@@ -701,7 +750,7 @@ section {
   .mobile, .activity, .settings {
     grid-column: 2/span 1;
   }
-  .activity {
+  .activity, .settings {
     border-left: 1px solid #d2d2d2;
   }
 }

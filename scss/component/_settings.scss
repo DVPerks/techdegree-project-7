@@ -1,0 +1,13 @@
+@use '../utilities/variables' as variables;
+
+.settings, .settings-container, .settings-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-container {
+        height: 100%;
+    }
+    &-toggle {
+        gap: 2rem;
+    }
+}

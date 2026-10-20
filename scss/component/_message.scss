@@ -1,0 +1,24 @@
+@use '../utilities/variables' as variables;
+
+.form {
+    &-field, &-area, &-send {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: 1px solid variables.$gray;
+    }
+    &-field, &-area {
+        background-color: variables.$light-gray;
+        padding: 0.5rem;
+    }
+    &-field, &-send {
+        height: 3rem;
+    }
+    &-area {
+        height: 10rem;
+    }
+    &-send {
+        color: white;
+        background-color: variables.$lavendar;
+    }
+}

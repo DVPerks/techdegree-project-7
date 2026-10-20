@@ -7,9 +7,11 @@
 @use 'component/image';
 @use 'component/navigation';
 @use 'component/social';
+@use 'component/message';
 @use 'component/graph';
 @use 'component/alert';
 @use 'component/members';
+@use 'component/settings';
 @use 'component/toggle-switch';
 @use 'component/main';
 @use 'utilities/mediaqueries';

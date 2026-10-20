@@ -59,12 +59,19 @@
     <section id="traffic" class="traffic">
       <div class="traffic-header">
         <h3>Traffic</h3>
-        <ul class="traffic-nav">
-          <li class="traffic-nav-link">Hourly</li>
-          <li class="traffic-nav-link">Daily</li>
-          <li class="traffic-nav-link active">Weekly</li>
-          <li class="traffic-nav-link">Monthly</li>
-        </ul>
+        <div class="traffic-nav">
+          <input class="traffic-nav-link" type="radio" id="hourly" name="timeframe" value="hourly">
+          <label for="hourly">Hourly</label>
+
+          <input class="traffic-nav-link" type="radio" id="daily" name="timeframe" value="daily">
+          <label for="daily">Daily</label>
+
+          <input class="traffic-nav-link" type="radio" id="weekly" name="timeframe" value="weekly" checked>
+          <label for="weekly">Weekly</label>
+
+          <input class="traffic-nav-link" type="radio" id="monthly" name="timeframe" value="monthly">
+          <label for="monthly">Monthly</label>
+        </div>
       </div>
       <div class="graph-container-full">
         <!-- element line graph will attach to -->
@@ -130,49 +137,49 @@
 
     <section id="members" class="members">
       <h3>New Members</h3>
-      <div class="members-container">
-        <img src="images/member-1.jpg" class="profile-image">
-        <div class="members-flexbox">
-          <div class="members-text">
-            <p>Victoria Chambers</p>
-            <a href="#">victoria.chambers80@example.com</a>
+        <div class="members-container">
+          <img src="images/member-1.jpg" class="profile-image">
+          <div class="members-flexbox">
+            <div class="members-text">
+              <p>Victoria Chambers</p>
+              <a href="#">victoria.chambers80@example.com</a>
+            </div>
+            <p>10/15/20</p>
           </div>
-          <p>10/15/20</p>
         </div>
-      </div>
-      <div class="members-container">
-        <img src="images/member-2.jpg" class="profile-image">
-        <div class="members-flexbox">
-          <div class="members-text">
-            <p>Dale Byrd</p>
-            <a href="#">dale.byrd52@example.com</a>
+        <div class="members-container">
+          <img src="images/member-2.jpg" class="profile-image">
+          <div class="members-flexbox">
+            <div class="members-text">
+              <p>Dale Byrd</p>
+              <a href="#">dale.byrd52@example.com</a>
+            </div>
+            <p>10/15/20</p>
           </div>
-          <p>10/15/20</p>
         </div>
-      </div>
-      <div class="members-container">
-        <img src="images/member-3.jpg" class="profile-image">
-        <div class="members-flexbox">
-          <div class="members-text">
-            <p>Dawn Wood</p>
-            <a href="#">dawn.wood16@example.com</a>
+        <div class="members-container">
+          <img src="images/member-3.jpg" class="profile-image">
+          <div class="members-flexbox">
+            <div class="members-text">
+              <p>Dawn Wood</p>
+              <a href="#">dawn.wood16@example.com</a>
+            </div>
+            <p>10/15/20</p>
           </div>
-          <p>10/15/20</p>
         </div>
-      </div>
-      <div class="members-container">
-        <img src="images/member-4.jpg" class="profile-image">
-        <div class="members-flexbox">
-          <div class="members-text">
-            <p>Dan Oliver</p>
-            <a href="#">dan.oliver82@example.com</a>
+        <div class="members-container">
+          <img src="images/member-4.jpg" class="profile-image">
+          <div class="members-flexbox">
+            <div class="members-text">
+              <p>Dan Oliver</p>
+              <a href="#">dan.oliver82@example.com</a>
+            </div>
+            <p>10/15/20</p>
           </div>
-          <p>10/15/20</p>
         </div>
-      </div>
     </section>
 
-    <section class="activity">
+    <section class="activity members">
       <h3>Recent Activity</h3>
       <div class="members-container">
         <img src="images/member-1.jpg" class="profile-image">
@@ -236,33 +243,36 @@
 
     <section id="settings" class="settings">
       <h3>Settings</h3>
-      <input type="checkbox" class="toggle">
-      <input type="checkbox" class="toggle">
-      <select class="form-field" id="timezone">
-        <option disabled selected>Select a Timezone</option>
-        <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
-        <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
-        <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
-        <option value="America/Anchorage">(GMT-9:00) Alaska</option>
-        <option value="America/Los_Angeles">(GMT-8:00) Pacific Time (US & Canada)</option>
-        <option value="America/Denver">(GMT-7:00) Mountain Time (US & Canada)</option>
-        <option value="America/Chicago">(GMT-6:00) Central Time (US & Canada)</option>
-        <option value="America/New_York">(GMT-5:00) Eastern Time (US & Canada)</option>
-        <option value="America/Caracas">(GMT-4:00) Atlantic Time (Canada), Caracas, La Paz</option>
-        <option value="America/Argentina/Buenos_Aires">(GMT-3:00) Buenos Aires, Georgetown</option>
-        <option value="Atlantic/Azores">(GMT-1:00) Azores, Cape Verde Is.</option>
-        <option value="Europe/London">(GMT+0:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
-        <option value="Europe/Paris">(GMT+1:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
-        <option value="Europe/Athens">(GMT+2:00) Athens, Bucharest, Istanbul, Cairo</option>
-        <option value="Asia/Dubai">(GMT+4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
-        <option value="Asia/Kolkata">(GMT+5:30) Chennai, Kolkata, Mumbai, New Delhi</option>
-        <option value="Asia/Bangkok">(GMT+7:00) Bangkok, Hanoi, Jakarta</option>
-        <option value="Asia/Shanghai">(GMT+8:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
-        <option value="Asia/Tokyo">(GMT+9:00) Osaka, Sapporo, Tokyo, Seoul</option>
-        <option value="Australia/Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
-        <option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
-      </select>
-      </select>
+      <div class="settings-container">
+        <div class="settings-toggle">
+          <input type="checkbox" class="toggle">
+          <input type="checkbox" class="toggle">
+        </div>
+        <select class="form-field" id="timezonse">
+          <option disabled selected>Select a Timezone</option>
+          <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
+          <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
+          <option value="Pacific/Honolulu">(GMT-10:00) Hawaii</option>
+          <option value="America/Anchorage">(GMT-9:00) Alaska</option>
+          <option value="America/Los_Angeles">(GMT-8:00) Pacific Time (US & Canada)</option>
+          <option value="America/Denver">(GMT-7:00) Mountain Time (US & Canada)</option>
+          <option value="America/Chicago">(GMT-6:00) Central Time (US & Canada)</option>
+          <option value="America/New_York">(GMT-5:00) Eastern Time (US & Canada)</option>
+          <option value="America/Caracas">(GMT-4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+          <option value="America/Argentina/Buenos_Aires">(GMT-3:00) Buenos Aires, Georgetown</option>
+          <option value="Atlantic/Azores">(GMT-1:00) Azores, Cape Verde Is.</option>
+          <option value="Europe/London">(GMT+0:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+          <option value="Europe/Paris">(GMT+1:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+          <option value="Europe/Athens">(GMT+2:00) Athens, Bucharest, Istanbul, Cairo</option>
+          <option value="Asia/Dubai">(GMT+4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+          <option value="Asia/Kolkata">(GMT+5:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+          <option value="Asia/Bangkok">(GMT+7:00) Bangkok, Hanoi, Jakarta</option>
+          <option value="Asia/Shanghai">(GMT+8:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+          <option value="Asia/Tokyo">(GMT+9:00) Osaka, Sapporo, Tokyo, Seoul</option>
+          <option value="Australia/Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+          <option value="Pacific/Auckland">(GMT+12:00) Auckland, Wellington</option>
+        </select>
+      </div>
       <div class="settings-button" >
         <button class="button-primary" id="save">Save</button>
         <button class="button-disabled" id="cancel">Cancel</button>

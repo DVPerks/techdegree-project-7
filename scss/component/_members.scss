@@ -1,6 +1,10 @@
 @use '../utilities/variables' as variables;
 
 .members {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     &-container {
         text-align: center;
         border-bottom: 1px solid variables.$gray;
