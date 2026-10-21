@@ -1,6 +1,27 @@
 const trafficCanvas = document.getElementById("traffic-chart");
 
-let trafficData = {
+// Define datasets for each timeframe
+const trafficDataHourly = {
+    labels: ["16am", "17am", "18am", "19am", "20am", "21am", "22am"],
+    datasets: [{
+        data: [15, 25, 40, 30, 50, 70, 60],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+        lineTension: 0.3,
+    }]
+};
+
+const trafficDataDaily = {
+    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    datasets: [{
+        data: [200, 350, 400, 300, 450, 500, 300],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+        lineTension: 0.3,
+    }]
+};
+
+const trafficDataWeekly = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -10,10 +31,35 @@ let trafficData = {
     }]
 };
 
+const trafficDataMonthly = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        data: [5000, 6000, 7500, 8000, 9500, 11000, 10500, 12000, 11500, 13000, 14500, 16000],
+        backgroundColor: 'rgba(116, 119, 191, .3)',
+        borderWidth: 1,
+        lineTension: 0.3,
+    }]
+};
+
+// Helper function to return the correct dataset object based on ID
+function getDataForTimeframe(timeframeId) {
+    switch (timeframeId) {
+        case 'hourly': return trafficDataHourly;
+        case 'daily': return trafficDataDaily;
+        case 'weekly': return trafficDataWeekly;
+        case 'monthly': return trafficDataMonthly;
+        default: return trafficDataWeekly;
+    }
+}
+
+// Determine initial dataset based on whichever radio button is checked in HTML on page load
+const checkedRadio = document.querySelector('.traffic-nav-link:checked') || document.getElementById('weekly');
+const initialData = getDataForTimeframe(checkedRadio.id);
+
 let trafficOptions = {
-    responsive: false,          // Ensures it listens to window/container resizes
-    maintainAspectRatio: true, // Forces it to respect the aspect ratio
-    aspectRatio: 2.5,          // Width-to-height ratio (width / height)
+    responsive: false,
+    maintainAspectRatio: true,
+    aspectRatio: 2.5,
     backgroundColor: 'rgba(112, 104, 201, .5)',
     fill: true,
     animation: {
@@ -31,10 +77,36 @@ let trafficOptions = {
     }
 };
 
+// Initialize the traffic chart with the starting timeframe data
 let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: initialData,
     options: trafficOptions
+});
+
+const trafficNavLinks = document.querySelectorAll('.traffic-nav-link');
+
+trafficNavLinks.forEach(link => {
+    link.addEventListener('change', () => {
+        const checkedRadio = document.querySelector('.traffic-nav-link:checked');
+        if (!checkedRadio) return;
+
+        const selectedData = getDataForTimeframe(checkedRadio.id);
+
+        if (selectedData) {
+            // Replace the entire data object reference to force scale recalculation
+            trafficChart.data = {
+                labels: [...selectedData.labels],
+                datasets: [{
+                    data: [...selectedData.datasets[0].data],
+                    backgroundColor: selectedData.datasets[0].backgroundColor,
+                    borderWidth: selectedData.datasets[0].borderWidth,
+                    lineTension: selectedData.datasets[0].lineTension
+                }]
+            };
+            trafficChart.update();
+        }
+    });
 });
 
 
@@ -113,10 +185,6 @@ function beforePrintHandler () {
         trafficCanvas.instances[id].resize();
     }
 }
-
-window.addEventListener('afterprint', () => {
-  trafficCanvas.resize();
-});
 
 window.addEventListener('afterprint', () => {
   trafficCanvas.resize();

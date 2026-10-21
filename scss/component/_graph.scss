@@ -16,3 +16,39 @@
     height: auto !important;
   }
 }
+
+.traffic {
+  &-nav {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    &-link {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      &:checked + label {
+        background-color: #78CF82;
+        color: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    & label {
+      padding: 6px 16px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #000;
+      cursor: pointer;
+      border-radius: 25px;
+      transition: all 0.2s ease;
+      user-select: none;
+      &:hover {
+        color: variables.$gray;
+      }
+    }
+  }
+}

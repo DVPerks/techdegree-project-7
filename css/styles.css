@@ -583,6 +583,40 @@ header .user-profile .user-icon {
   height: auto !important;
 }
 
+.traffic-nav {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.traffic-nav-link {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.traffic-nav-link:checked + label {
+  background-color: #78CF82;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.traffic-nav-link:checked + label:hover {
+  color: #000;
+}
+.traffic-nav label {
+  padding: 6px 16px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.traffic-nav label:hover {
+  color: #d2d2d2;
+}
+
 .alert {
   background-color: #7477bf;
   border-radius: 10px;
@@ -716,6 +750,9 @@ section {
     width: 80px;
     height: 100%;
     padding: 1rem;
+  }
+  .traffic-nav {
+    justify-content: flex-end;
   }
   .mobile {
     border-left: 1px solid #d2d2d2;

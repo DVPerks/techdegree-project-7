@@ -36,6 +36,10 @@
     padding: 1rem;
   }
 
+  .traffic-nav {
+    justify-content: flex-end;
+  }
+
   .mobile {
     border-left: 1px solid variables.$gray;
   }
