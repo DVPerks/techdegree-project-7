@@ -16,7 +16,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    & div {
+    & .notification {
       height: 100%;
       border-right: 1px solid white;
       display: block;
@@ -59,8 +59,24 @@ header {
   fill: white;   /* Changes the icon color to white */
 }
 
-.messages-link svg {
-  width: 36px;   /* Adjust size as needed */
-  height: 36px;
-  fill: white; 
+.notification-link {
+  &:hover svg {
+    animation: bellRing 0.8s ease-in-out;
+  }
+  & svg {
+    width: 36px;   /* Adjust size as needed */
+    height: 36px;
+    fill: white;
+    transform-origin: top center;
+    transition: bellRing .5s ease-in-out;
+  }
+}
+
+@keyframes bellRing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-45deg); }
+  40% { transform: rotate(45deg); }
+  60% { transform: rotate(-22.5deg); }
+  80% { transform: rotate(22.5deg); }
+  100% { transform: rotate(0deg); }
 }

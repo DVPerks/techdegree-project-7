@@ -1,0 +1,36 @@
+@use '../utilities/variables' as variables;
+
+
+dialog {
+    border: none; 
+    border-radius: 8px; 
+    padding: 1rem;
+    background-color: variables.$light-gray; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-height: 80vh;
+}
+
+.notification {
+    &-dot {
+        display: none;
+    }
+    &-box {
+        display: flex;
+        flex-direction: column;
+    }
+    &-container {
+        background-color: white;
+        border-radius: 5px;
+        padding: 1rem;
+        border: 1px solid variables.$gray;
+        margin-bottom: 1rem;
+        & * {
+            color: #777;
+        }
+    }
+}
+
+/* Show the dot when the notification class is active */
+.has-notification .notification-dot {
+    display: block;
+}

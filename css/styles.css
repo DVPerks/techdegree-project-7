@@ -476,7 +476,7 @@ header .user-profile {
   justify-content: space-between;
   height: 60px;
 }
-header .user-profile div {
+header .user-profile .notification {
   height: 100%;
   border-right: 1px solid white;
   display: block;
@@ -515,12 +515,37 @@ header .user-profile .user-icon {
   fill: white; /* Changes the icon color to white */
 }
 
-.messages-link svg {
+.notification-link:hover svg {
+  animation: bellRing 0.8s ease-in-out;
+}
+.notification-link svg {
   width: 36px; /* Adjust size as needed */
   height: 36px;
   fill: white;
+  transform-origin: top center;
+  transition: bellRing 0.5s ease-in-out;
 }
 
+@keyframes bellRing {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-45deg);
+  }
+  40% {
+    transform: rotate(45deg);
+  }
+  60% {
+    transform: rotate(-22.5deg);
+  }
+  80% {
+    transform: rotate(22.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .social-flexbox {
   display: flex;
   flex-direction: column;
@@ -634,6 +659,38 @@ header .user-profile .user-icon {
 }
 .alert * {
   color: white;
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-height: 80vh;
+}
+
+.notification-dot {
+  display: none;
+}
+.notification-box {
+  display: flex;
+  flex-direction: column;
+}
+.notification-container {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+  border: 1px solid #d2d2d2;
+  margin-bottom: 1rem;
+}
+.notification-container * {
+  color: #777;
+}
+
+/* Show the dot when the notification class is active */
+.has-notification .notification-dot {
+  display: block;
 }
 
 .members {
