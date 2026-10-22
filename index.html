@@ -245,10 +245,16 @@
       <h3>Settings</h3>
       <div class="settings-container">
         <div class="settings-toggle">
-          <input type="checkbox" class="toggle">
-          <input type="checkbox" class="toggle">
+          <label class="settings-item">
+            <span class="settings-label">Send Email Notifications</span>
+            <input type="checkbox" class="toggle" id="notifications" checked>
+          </label>
+          <label class="settings-item">
+            <span class="settings-label">Set Profile to Public</span>
+            <input type="checkbox" class="toggle" id="public">
+          </label>
         </div>
-        <select class="form-field" id="timezonse">
+        <select class="form-field" id="timezones">
           <option disabled selected>Select a Timezone</option>
           <option value="Etc/GMT+12">(GMT-12:00) International Date Line West</option>
           <option value="Pacific/Midway">(GMT-11:00) Midway Island, Samoa</option>
@@ -278,8 +284,6 @@
         <button class="button-disabled" id="cancel">Cancel</button>
       </div>
     </section>
-
-
   </main>
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script> -->
@@ -287,6 +291,7 @@
   <script src="javascript/chart.js"></script>
   <script src="javascript/alert.js"></script>
   <script src="javascript/message.js"></script>
+  <script src="javascript/settings.js"></script>
   <script src="javascript/app.js"></script>
 </body>
 

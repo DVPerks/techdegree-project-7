@@ -4,10 +4,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.settings {
     &-container {
         height: 100%;
+    }
+    &-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &-toggle {
         gap: 2rem;
     }
+}
+
+.form-field {
+    margin-top: 3rem;
 }

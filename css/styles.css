@@ -661,44 +661,69 @@ header .user-profile .user-icon {
   flex-direction: column;
   justify-content: space-between;
 }
-.settings-container, .settings-container-container, .settings-toggle-container {
+
+.settings-container {
   height: 100%;
 }
-.settings-toggle, .settings-container-toggle, .settings-toggle-toggle {
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings-toggle {
   gap: 2rem;
+}
+
+.form-field {
+  margin-top: 3rem;
 }
 
 input.toggle {
   appearance: none;
   -webkit-appearance: none;
   position: relative;
-  width: 50px;
-  height: 30px;
-  border-radius: 25px;
+  width: 120px;
+  height: 45px;
+  border-radius: 50px;
   background-color: #f7f7f7;
   border: 1px solid #d2d2d2;
   transition: background 0.3s;
   outline: none;
   cursor: pointer;
 }
+input.toggle::before {
+  content: "OFF";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
 input.toggle::after {
   content: "";
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 20%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   background-color: rgb(255, 255, 255);
-  border: 1px solid #d2d2d2;
+  border: 2px solid #d2d2d2;
   transition: left 0.3s;
 }
 input.toggle:checked {
   background-color: #7477bf;
 }
+input.toggle:checked::before {
+  content: "ON";
+  left: 15px;
+  right: auto;
+  color: white;
+}
 input.toggle:checked::after {
-  left: 70%;
+  left: 80%;
 }
 
 .main-header {
@@ -789,6 +814,9 @@ section {
   }
   .activity, .settings {
     border-left: 1px solid #d2d2d2;
+  }
+  .form-field {
+    margin-top: 0;
   }
 }
 
