@@ -18,14 +18,15 @@
     }
   }
 
-  .main-header, .alert, .traffic, .social {
+  .main-header, .alert, .traffic, .social, 
+  .members, .message, .activity, .settings {
     grid-column: 1 / span 2;
   }
-  .daily, .members, .message {
-    grid-column: 1 / span 2;
+  .daily {
+    grid-column: 1 / span 1;
   } 
-  .mobile, .activity, .settings {
-    grid-column: 1 / span 2;
+  .mobile {
+    grid-column: 2 / span 1;
   }
 
   /* Navigation */
@@ -38,16 +39,29 @@
 
   .traffic-nav {
     justify-content: flex-end;
+    & label {
+      font-size: 1.25rem;
+    }
   }
 
   .mobile {
     border-left: 1px solid variables.$gray;
   }
 
-  .social-flexbox {
-    flex-direction: row;
-    & .social-container {
+  .social {
+    &-flexbox {
+      flex-direction: row;
+    }
+    &-container {
       flex: 3;
+      & p {
+        &:nth-child(1) {
+            font-size: 1rem;
+        }
+        &:nth-child(2) {
+            font-size: 1.75rem;
+        }
+      }
     }
   }
 
@@ -71,6 +85,10 @@
     display: initial;
   }
 
+  .settings-toggle {
+    width: 50%;
+  }
+
 }
 
 @media (min-width: variables.$desktop) {
@@ -85,7 +103,7 @@
     border-left: 1px solid variables.$gray;
   }
 
-  .form-field {
-    margin-top: 0;
+  .settings-toggle {
+    width: 70%;
   }
 }

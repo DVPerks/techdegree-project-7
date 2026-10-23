@@ -323,7 +323,12 @@ template {
 }
 
 p {
+  font-size: 0.8rem;
   line-height: 1.45em;
+}
+
+h2 {
+  font-size: 1.25rem;
 }
 
 a {
@@ -336,10 +341,15 @@ header * {
   color: #fff;
 }
 header * h3 {
+  font-size: 1rem;
   font-weight: 200;
 }
 
+.title {
+  margin: 0;
+}
 .title * {
+  font-size: 1.4rem;
   font-weight: 200;
 }
 .title-bold {
@@ -347,7 +357,9 @@ header * h3 {
 }
 
 main h3 {
+  font-size: 1rem;
   text-transform: uppercase;
+  margin-top: 0.5rem;
 }
 
 /* ============================================= */
@@ -442,8 +454,8 @@ button.button-disabled {
 }
 
 div.social-image {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   padding: 1rem;
   border-radius: 50%;
   background-color: #7477bf;
@@ -467,14 +479,14 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 header .user-profile {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 40px;
 }
 header .user-profile .notification {
   height: 100%;
@@ -482,15 +494,15 @@ header .user-profile .notification {
   display: block;
 }
 header .user-profile a, header .user-profile img, header .user-profile h3 {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 header .user-profile .user-icon {
-  width: 60px;
+  width: 40px;
   height: auto;
 }
 
 .nav {
-  padding: 0 5rem;
+  padding: 0 2rem;
   flex-basis: 100%;
   display: flex;
   flex-direction: row;
@@ -510,17 +522,17 @@ header .user-profile .user-icon {
 }
 
 .nav-link svg {
-  width: 42px; /* Adjust size as needed */
-  height: 42px;
-  fill: white; /* Changes the icon color to white */
+  width: 36px;
+  height: 36px;
+  fill: white;
 }
 
 .notification-link:hover svg {
   animation: bellRing 0.8s ease-in-out;
 }
 .notification-link svg {
-  width: 36px; /* Adjust size as needed */
-  height: 36px;
+  width: 28px;
+  height: 28px;
   fill: white;
   transform-origin: top center;
   transition: bellRing 0.5s ease-in-out;
@@ -565,10 +577,11 @@ header .user-profile .user-icon {
   margin: 0;
 }
 .social-container p:nth-child(1) {
+  font-size: 1.5rem;
   color: #7477bf;
 }
 .social-container p:nth-child(2) {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .form-field, .form-area, .form-send {
@@ -629,8 +642,8 @@ header .user-profile .user-icon {
   color: #000;
 }
 .traffic-nav label {
-  padding: 6px 16px;
-  font-size: 1.5rem;
+  padding: 6px 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #000;
   cursor: pointer;
@@ -708,6 +721,9 @@ dialog {
 .members-container p {
   margin: 0;
 }
+.members-container p span {
+  font-weight: bold;
+}
 .members-container:last-child {
   border-bottom: none;
   margin-bottom: 0;
@@ -727,19 +743,23 @@ dialog {
   justify-content: space-between;
   align-items: center;
 }
+.settings-time {
+  margin: 3rem 0 1rem 0;
+  height: 3rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+}
 .settings-toggle {
   gap: 2rem;
-}
-
-.form-field {
-  margin-top: 3rem;
 }
 
 input.toggle {
   appearance: none;
   -webkit-appearance: none;
   position: relative;
-  width: 120px;
+  width: 100px;
   height: 45px;
   border-radius: 50px;
   background-color: #f7f7f7;
@@ -799,7 +819,7 @@ input.toggle:checked::after {
 }
 
 section {
-  padding: 1rem 2rem;
+  padding: 0.5rem 0.75rem;
   min-width: 0;
   width: 100%;
   border-bottom: 1px solid #d2d2d2;
@@ -817,14 +837,15 @@ section {
   .grid-main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .main-header, .alert, .traffic, .social {
+  .main-header, .alert, .traffic, .social,
+  .members, .message, .activity, .settings {
     grid-column: 1/span 2;
   }
-  .daily, .members, .message {
-    grid-column: 1/span 2;
+  .daily {
+    grid-column: 1/span 1;
   }
-  .mobile, .activity, .settings {
-    grid-column: 1/span 2;
+  .mobile {
+    grid-column: 2/span 1;
   }
   /* Navigation */
   .nav {
@@ -836,14 +857,23 @@ section {
   .traffic-nav {
     justify-content: flex-end;
   }
+  .traffic-nav label {
+    font-size: 1.25rem;
+  }
   .mobile {
     border-left: 1px solid #d2d2d2;
   }
   .social-flexbox {
     flex-direction: row;
   }
-  .social-flexbox .social-container {
+  .social-container {
     flex: 3;
+  }
+  .social-container p:nth-child(1) {
+    font-size: 1rem;
+  }
+  .social-container p:nth-child(2) {
+    font-size: 1.75rem;
   }
   .members-container, .members-flexbox {
     display: flex;
@@ -861,6 +891,9 @@ section {
   .mobile-hidden {
     display: initial;
   }
+  .settings-toggle {
+    width: 50%;
+  }
 }
 @media (min-width: 1024px) {
   .daily, .members, .message {
@@ -872,8 +905,8 @@ section {
   .activity, .settings {
     border-left: 1px solid #d2d2d2;
   }
-  .form-field {
-    margin-top: 0;
+  .settings-toggle {
+    width: 70%;
   }
 }
 

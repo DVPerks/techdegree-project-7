@@ -15,11 +15,15 @@
         justify-content: space-between;
         align-items: center;
     }
+    &-time {
+        margin: 3rem 0 1rem 0;
+        height: 3rem;
+        padding: 1rem;
+        background-color: variables.$light-gray;
+        border: 1px solid variables.$gray;
+        border-radius: 5px;
+    }
     &-toggle {
         gap: 2rem;
     }
-}
-
-.form-field {
-    margin-top: 3rem;
 }

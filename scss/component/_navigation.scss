@@ -9,30 +9,30 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   & .user-profile {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 40px;
     & .notification {
       height: 100%;
       border-right: 1px solid white;
       display: block;
     }
     & a, img, h3 {
-      padding: 0 1rem;
+      padding: 0 0.5rem;
     }
     & .user-icon {
-      width: 60px;
+      width: 40px;
       height: auto;
     }
   }
 }
 
 .nav {
-    padding: 0 5rem;
+    padding: 0 2rem;
     flex-basis: 100%;
     display: flex;
     flex-direction: row;
@@ -54,9 +54,9 @@ header {
 }
 
 .nav-link svg {
-  width: 42px;   /* Adjust size as needed */
-  height: 42px;
-  fill: white;   /* Changes the icon color to white */
+  width: 36px;   
+  height: 36px;
+  fill: white;
 }
 
 .notification-link {
@@ -64,8 +64,8 @@ header {
     animation: bellRing 0.8s ease-in-out;
   }
   & svg {
-    width: 36px;   /* Adjust size as needed */
-    height: 36px;
+    width: 28px;
+    height: 28px;
     fill: white;
     transform-origin: top center;
     transition: bellRing .5s ease-in-out;

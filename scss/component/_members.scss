@@ -12,6 +12,9 @@
         padding-bottom: 1rem;
         & p {
             margin: 0;
+            & span {
+                font-weight: bold;
+            }
         }
         &:last-child {
             border-bottom: none;
